@@ -1,28 +1,43 @@
 <div>
     <input type="test" class="calculator-screen" [value]="currentNumber" disabled />
     <div class="calculator-keys">
-        <button type="button" (click)="getOperation('+')" class="operator" value="+">+</button>
-        <button type="button" (click)="getOperation('-')" class="operator" value="-">-</button>
-        <button type="button" (click)="getOperation('*')" class="operator" value="*">*</button>
-        <button type="button" (click)="getOperation('/')" class="operator" value="/">/</button>
+        <button mat-raised-button [color]="colourButtonRad" (click)="setRadMode(true)">Rad</button>
+        <button mat-raised-button [color]="colourButtonDeg" (click)="setRadMode(false)">Deg</button>
 
-        <button type="button" (click)="getNumber('7')" value="7">7</button>
-        <button type="button" (click)="getNumber('8')" value="8">8</button>
-        <button type="button" (click)="getNumber('9')" value="9">9</button>
+        <button mat-raised-button (click)="getOneNbOperation('!')" class="oneNbOperator" value="!">!</button>
+        <button mat-raised-button (click)="getOneNbOperation('log2')" class="oneNbOperator" value="log2">log2</button>
+        <button mat-raised-button (click)="getOneNbOperation('ln')" class="oneNbOperator" value="ln">ln</button>
+        <button mat-raised-button (click)="getOneNbOperation('sqrt')" class="oneNbOperator" value="sqrt">sqrt</button>
+        <button mat-raised-button (click)="getOneNbOperation('cos')" class="oneNbOperator" value="cos">cos</button>
+        <button mat-raised-button (click)="getOneNbOperation('sin')" class="oneNbOperator" value="sin">sin</button>
+        
 
-        <button type="button" (click)="getNumber('4')" value="4">4</button>
-        <button type="button" (click)="getNumber('5')" value="5">5</button>
-        <button type="button" (click)="getNumber('6')" value="6">6</button>
+        <button mat-raised-button color="warn" (click)="getOperation('+')" class="operator" value="+">+</button>
+        <button mat-raised-button color="warn" (click)="getOperation('-')" class="operator" value="-">-</button>
+        <button mat-raised-button color="warn" (click)="getOperation('*')" class="operator" value="*">*</button>
+        <button mat-raised-button color="warn" (click)="getOperation('/')" class="operator" value="/">/</button>
 
-        <button type="button" (click)="getNumber('1')" value="1">1</button>
-        <button type="button" (click)="getNumber('2')" value="2">2</button>
-        <button type="button" (click)="getNumber('3')" value="3">3</button>
+        <button mat-raised-button (click)="getNumber('9')" value="9">9</button>
+        <button mat-raised-button (click)="getNumber('8')" value="8">8</button>
+        <button mat-raised-button (click)="getNumber('7')" value="7">7</button>
 
-        <button type="button" (click)="getNumber('0')" value="0">0</button>
+        
+        <button mat-raised-button (click)="getNumber('6')" value="6">6</button>
+        <button mat-raised-button (click)="getNumber('5')" value="5">5</button>
+        <button mat-raised-button (click)="getNumber('4')" value="4">4</button>
 
-        <button type="button" (click)="getDecimal()" class="decimal" value=".">.</button>
-        <button type="button" (click)="clear()" class="all-clear" value="all-clear">AC</button>
+        <button mat-raised-button (click)="getNumber('3')" value="3">3</button>
+        <button mat-raised-button (click)="getNumber('2')" value="2">2</button>
 
-        <button type="button" (click)="getOperation('=')" class="equal-sign" value="=">=</button>
+        
+        <button mat-raised-button (click)="getNumber('1')" value="1">1</button>
+        <button mat-raised-button (click)="getNumber('0')" value="0">0</button>
+
+        <button mat-raised-button (click)="getDecimal()" class="decimal" value=".">.</button>
+
+        
+        <button mat-raised-button color="warn" type="button" (click)="clear()" class="all-clear" value="all-clear">AC</button>
+
+        <button mat-raised-button color="primary" type="button" (click)="getOperation('=')" class="equal-sign" value="=">=</button>
     </div>
 </div>
